@@ -1,0 +1,9 @@
+.section{
+    background-color: white;
+}
+.section__header{
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid rgb(218, 213, 213);
+}

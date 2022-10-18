@@ -1,0 +1,15 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+.body {
+    background-color: rgb(218, 213, 213);
+    display: flex;
+    justify-content: center;
+}

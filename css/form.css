@@ -1,0 +1,14 @@
+.form{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.form__text{
+    width: 80%;
+    height: 40px;
+    margin-right: 20px;
+}
+.form__button{
+    width: 20%;
+    height: 40px;
+}
