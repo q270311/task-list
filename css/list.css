@@ -5,8 +5,13 @@
     padding: 20px;
 }
 .list__item{
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    grid-auto-rows: minmax(40px, auto); 
+    align-items:center;
+    grid-gap: 0px;
+    
     border-bottom: 1px solid rgb(218, 213, 213);
-    min-height: 40px; 
     padding: 10px 0px; 
 
 }
