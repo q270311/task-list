@@ -16,3 +16,16 @@
     color: white;
     border: 2px solid teal;
 }
+@media (max-width: 767px) {
+    .form {
+        display:flex;
+        flex-direction: column;
+    }
+    .form__text{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .form__button{
+        width: 100%;
+    }
+}
