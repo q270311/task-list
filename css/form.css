@@ -1,31 +1,36 @@
-.form{
+.form {
     display: flex;
     justify-content: space-between;
     padding: 20px;
 }
-.form__text{
+
+.form__text {
     width: 80%;
     height: 40px;
     margin-right: 20px;
-    border:2px solid #dad5d5;
+    border: 2px solid #dad5d5;
 }
-.form__button{
+
+.form__button {
     width: 20%;
     height: 40px;
     background-color: teal;
     color: white;
     border: 2px solid teal;
 }
+
 @media (max-width: 767px) {
     .form {
-        display:flex;
+        display: flex;
         flex-direction: column;
     }
-    .form__text{
+
+    .form__text {
         width: 100%;
         margin-bottom: 10px;
     }
-    .form__button{
+
+    .form__button {
         width: 100%;
     }
 }

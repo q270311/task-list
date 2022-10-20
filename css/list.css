@@ -1,20 +1,22 @@
-.list{
+.list {
     width: 100%;
     min-height: 50px;
     list-style: none;
     padding: 20px;
 }
-.list__item{
+
+.list__item {
     display: grid;
     grid-template-columns: 40px 1fr 40px;
-    grid-auto-rows: minmax(40px, auto); 
-    align-items:center;
+    grid-auto-rows: minmax(40px, auto);
+    align-items: center;
     grid-gap: 0px;
-    
+
     border-bottom: 1px solid #dad5d5;
-    padding: 10px 0px; 
+    padding: 10px 0px;
 
 }
-.list__item--lineThrough{
+
+.list__item--lineThrough {
     text-decoration: line-through;
 }
