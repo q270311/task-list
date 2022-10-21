@@ -12,4 +12,5 @@ html {
     background-color: rgb(218, 213, 213);
     display: flex;
     justify-content: center;
+    word-break: break-word;
 }
