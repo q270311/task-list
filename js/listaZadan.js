@@ -15,13 +15,13 @@
       taskTable.forEach(element => {
          if (element.done) {
             htmlString += `<li class="list__item list__item--lineThrough">
-                    <img src="img/accept-icon.png" alt="green icon">`;
+                    <img src="img/accept-icon.png" alt="green icon" class="list__icon">`;
          } else {
             htmlString += `<li class="list__item">
-                    <img src="img/green-icon.png" alt="green icon">`;
+                    <img src="img/green-icon.png" alt="green icon" class="list__icon">`;
          }
-         htmlString += `<span>${element.content}</span>
-                <img src="img/trash-can.jpg" alt="trash can icon">  
+         htmlString += `<span class="list__span">${element.content}</span>
+                <img src="img/trash-can.jpg" alt="trash can icon" class="list__icon">  
             </li>`;
       });
       document.querySelector(".js-taskList").innerHTML = htmlString;

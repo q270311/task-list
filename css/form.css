@@ -17,6 +17,7 @@
     background-color: teal;
     color: white;
     border: 2px solid teal;
+    cursor: pointer;
 }
 
 @media (max-width: 767px) {
@@ -31,6 +32,6 @@
     }
 
     .form__button {
-        width: 100%;
+        width: 100%;    
     }
 }

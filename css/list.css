@@ -7,16 +7,21 @@
 
 .list__item {
     display: grid;
-    grid-template-columns: 40px 1fr 40px;
+    grid-template-columns: auto 1fr auto;
     grid-auto-rows: minmax(40px, auto);
     align-items: center;
     grid-gap: 0px;
 
     border-bottom: 1px solid #dad5d5;
     padding: 10px 0px;
-
 }
 
 .list__item--lineThrough {
     text-decoration: line-through;
+}
+.list__span{
+    margin: 0px 10px;
+}
+.list__icon{
+    cursor: pointer;
 }
