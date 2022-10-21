@@ -45,13 +45,13 @@
    }
 
    const init = () => { 
-
       const form = document.querySelector(".js-form");
       form.addEventListener("submit",onFormSubmit);
 
       const addTaskButton = document.querySelector(".js-addTaskButton");
-      addTaskButton.addEventListener("click", () => {
+      addTaskButton.addEventListener("click", (event) => {
          document.querySelector(".js-taskText").focus();
+         onFormSubmit(event);
       });
       render();
    }
