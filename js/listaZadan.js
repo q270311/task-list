@@ -37,8 +37,8 @@
 
       taskTable.forEach(element => {
          if (element.done) {
-            htmlString += `<li class="list__item list__item--lineThrough">
-                    <img src="img/accept-icon.png" alt="green icon" class="list__icon js-done">`;
+            htmlString += `<li class="list__item list__item--done">
+                    <img src="img/accept-icon.png" alt="green accept icon" class="list__icon js-done">`;
          } else {
             htmlString += `<li class="list__item">
                     <img src="img/green-icon.png" alt="green icon" class="list__icon js-done">`;

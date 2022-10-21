@@ -16,7 +16,7 @@
     padding: 10px 0px;
 }
 
-.list__item--lineThrough {
+.list__item--done {
     text-decoration: line-through;
 }
 .list__span{
