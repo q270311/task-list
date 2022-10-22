@@ -19,9 +19,11 @@
 .list__item--done {
     text-decoration: line-through;
 }
-.list__span{
+
+.list__span {
     margin: 0px 10px;
 }
-.list__icon{
+
+.list__icon {
     cursor: pointer;
 }

@@ -16,7 +16,7 @@
       render();
    }
 
-   const bindEvents = ()=>{
+   const bindEvents = () => {
       const removeButtons = document.querySelectorAll(".js-remove");
       removeButtons.forEach((removeButton, index) => {
          removeButton.addEventListener("click", () => {

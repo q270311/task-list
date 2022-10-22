@@ -1,7 +1,8 @@
-.section{
+.section {
     background-color: white;
 }
-.section__header{
+
+.section__header {
     padding: 20px;
     font-size: 20px;
     font-weight: 700;
