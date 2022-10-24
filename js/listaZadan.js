@@ -37,14 +37,16 @@
 
       taskTable.forEach(element => {
          if (element.done) {
-            htmlString += `<li class="list__item list__item--done">
-                    <img src="img/accept-icon.png" alt="green accept icon" class="list__icon js-done">`;
+            htmlString += `<li class="list__item">
+                    <button class="list__icon list__icon--green js-done"> ✔ </button>
+                    <span class="list__taskText list__taskText--done">${element.content}</span>`;
          } else {
             htmlString += `<li class="list__item">
-                    <img src="img/green-icon.png" alt="green icon" class="list__icon js-done">`;
+                    <button class="list__icon list__icon--green js-done"></button>
+                    <span class="list__taskText">${element.content}</span>`;
          }
-         htmlString += `<span class="list__span">${element.content}</span>
-                <img src="img/trash-can.jpg" alt="trash can icon" class="list__icon js-remove">  
+         htmlString += `
+                <button class="list__icon list__icon--red js-remove"> 🗑 </button> 
             </li>`;
       });
       document.querySelector(".js-taskList").innerHTML = htmlString;
