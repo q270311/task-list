@@ -1,18 +1,18 @@
 {
-   const taskTable = [];
+   let taskTable = [];
 
    const addNewTask = (newTaskContent) => {
-      taskTable.push({
-         content: newTaskContent,
-      });
+      taskTable = [...taskTable, { content: newTaskContent, }];
       render();
    };
-   const removeTask = (taskIndex) => {
-      taskTable.splice(taskIndex, 1);
+   const removeTask = (removeIndex) => {
+      taskTable = [...taskTable.slice(0, removeIndex), ...taskTable.slice(removeIndex + 1)];
       render();
    }
-   const toggleTask = (taskIndex) => {
-      taskTable[taskIndex].done = !taskTable[taskIndex].done;
+   const toggleTask = (editIndex) => {
+      taskTable = [...taskTable.slice(0, editIndex),
+      { ...taskTable[editIndex], done: !taskTable[editIndex].done },
+      ...taskTable.slice(editIndex + 1)];
       render();
    }
 
