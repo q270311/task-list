@@ -1,5 +1,6 @@
 {
    let taskTable = [];
+   let hideDoneTask = false;
 
    const addNewTask = (newTaskContent) => {
       taskTable = [...taskTable, { content: newTaskContent, }];
@@ -32,7 +33,7 @@
       });
    }
 
-   const render = () => {
+   const renderTask = () => {
       let htmlString = "";
 
       taskTable.forEach(element => {
@@ -51,7 +52,29 @@
       });
       document.querySelector(".js-taskList").innerHTML = htmlString;
 
+   }
+
+   const renderButtons = () => {
+      const hideAllTasksButton = document.querySelector(".js-hideAllTasksButton");
+      const setDoneAllTasksButton = document.querySelector(".js-setDoneAllTasksButton");
+      if (taskTable.length === 0) {
+         hideAllTasksButton.classList.add("section__button--hidden");
+         setDoneAllTasksButton.classList.add("section__button--hidden");
+      } else {
+         hideAllTasksButton.classList.remove("section__button--hidden");
+         setDoneAllTasksButton.classList.remove("section__button--hidden");
+      }
+
+
+   }
+   const bindButtonEvents = () => { }
+
+   const render = () => {
+      renderTask();
+      renderButtons();
+
       bindEvents();
+      bindButtonEvents();
    };
 
    const onFormSubmit = (event) => {
