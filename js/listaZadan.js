@@ -2,6 +2,7 @@
    let taskTable = [];
    let hideDoneTask = false;
 
+
    const addNewTask = (newTaskContent) => {
       taskTable = [...taskTable, { content: newTaskContent, }];
       render();
@@ -14,6 +15,14 @@
       taskTable = [...taskTable.slice(0, editIndex),
       { ...taskTable[editIndex], done: !taskTable[editIndex].done },
       ...taskTable.slice(editIndex + 1)];
+      render();
+   }
+   const setDoneAllTasks = () => {
+      console.log("setAllDone");
+      taskTable = [...taskTable];
+      taskTable.forEach((element) => {
+         element.done = true;
+      });
       render();
    }
 
@@ -55,49 +64,66 @@
    }
 
    const renderButtons = () => {
-      const hideAllTasksButton = document.querySelector(".js-hideAllTasksButton");
-      const setDoneAllTasksButton = document.querySelector(".js-setDoneAllTasksButton");
-      if (taskTable.length === 0) {
-         hideAllTasksButton.classList.add("section__button--hidden");
-         setDoneAllTasksButton.classList.add("section__button--hidden");
-      } else {
-         hideAllTasksButton.classList.remove("section__button--hidden");
-         setDoneAllTasksButton.classList.remove("section__button--hidden");
+      let htmlString = "<span>Lista zadań</span>";
+
+      if (taskTable.length !== 0) {
+         htmlString += `
+         <button type="button" class="section__button js-hideAllTasksButton">Ukryj ukończone</button>
+         <button type="button" class="section__button js-setDoneAllTasksButton">Ukończ wszystkie</button>`;
       }
 
+      //   const isEveryTaskDone = taskTable.every(({ done }) => done);
+      //   if(isEveryTaskDone){
+      //      setDoneAllTasksButton.disabled = true;
+      //   }
 
+      document.querySelector(".js-sectionButton").innerHTML = htmlString;
    }
-   const bindButtonEvents = () => { }
-
-   const render = () => {
-      renderTask();
-      renderButtons();
-
-      bindEvents();
-      bindButtonEvents();
-   };
-
-   const onFormSubmit = (event) => {
-      event.preventDefault();
-      const taskTextElement = document.querySelector(".js-taskText");
-      const newTaskContent = taskTextElement.value.trim();
-      if (newTaskContent === "") {
+   const bindButtonEvents = () => {
+      if (taskTable.length === 0) {
          return;
       }
-      addNewTask(newTaskContent);
-      taskTextElement.value = "";
-   };
+   
+   const setDoneAllTasksButton = document.querySelector(".js-setDoneAllTasksButton");
+   setDoneAllTasksButton.addEventListener("click", () => {
+      setDoneAllTasks();
+   });
 
-   const init = () => {
-      const form = document.querySelector(".js-form");
-      form.addEventListener("submit", onFormSubmit);
+   const hideAllTasksButton = document.querySelector(".js-hideAllTasksButton");
+   hideAllTasksButton.addEventListener("click", () => {
+      console.log("hide al task");
+   });
+}
 
-      const addTaskButton = document.querySelector(".js-addTaskButton");
-      addTaskButton.addEventListener("click", (event) => {
-         document.querySelector(".js-taskText").focus();
-         onFormSubmit(event);
-      });
-      render();
-   };
-   init();
+const render = () => {
+   renderTask();
+   renderButtons();
+
+   bindEvents();
+   bindButtonEvents();
+};
+
+const onFormSubmit = (event) => {
+   event.preventDefault();
+   const taskTextElement = document.querySelector(".js-taskText");
+   const newTaskContent = taskTextElement.value.trim();
+   if (newTaskContent === "") {
+      return;
+   }
+   addNewTask(newTaskContent);
+   taskTextElement.value = "";
+};
+
+const init = () => {
+   const form = document.querySelector(".js-form");
+   form.addEventListener("submit", onFormSubmit);
+
+   const addTaskButton = document.querySelector(".js-addTaskButton");
+   addTaskButton.addEventListener("click", (event) => {
+      document.querySelector(".js-taskText").focus();
+      onFormSubmit(event);
+   });
+   render();
+};
+init();
 }
