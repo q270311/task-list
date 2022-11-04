@@ -20,6 +20,12 @@
     cursor: pointer;
 }
 
-.section__button--hidden {
-    visibility: hidden;
+.section__button:hover {
+    transition: 1.5s;
+    transform: color;
+    color: rgb(85, 73, 73);
+}
+
+.section__button:disabled {
+    color: rgb(212, 208, 208);
 }
