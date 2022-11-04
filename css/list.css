@@ -11,31 +11,42 @@
     align-items: center;
     border-bottom: 1px solid #dad5d5;
     padding: 10px 0px;
+    visibility: visible;
+}
+
+.list__item--hidden {
+    height: 0px;
+    visibility: hidden;
 }
 
 .list__taskText {
     margin: 0px 10px;
 }
-.list__taskText--done{
+
+.list__taskText--done {
     text-decoration: line-through;
 }
 
 .list__icon {
-    width:30px;
+    width: 30px;
     height: 30px;
     color: white;
     cursor: pointer;
-    border:none;
+    border: none;
 }
-.list__icon--green{
+
+.list__icon--green {
     background-color: hsl(120, 50%, 41%);
 }
-.list__icon--green:hover{
+
+.list__icon--green:hover {
     background-color: hsl(120, 36%, 47%);
 }
-.list__icon--red{
+
+.list__icon--red {
     background-color: rgb(199, 26, 26)
 }
-.list__icon--red:hover{
+
+.list__icon--red:hover {
     background-color: hsl(0, 49%, 50%)
 }
