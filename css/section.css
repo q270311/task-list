@@ -23,7 +23,7 @@
 .section__button:hover {
     transition: 1.5s;
     transform: color;
-    color: rgb(85, 73, 73);
+    color:rgb(206, 204, 204);
 }
 
 .section__button:disabled {
