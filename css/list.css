@@ -15,8 +15,7 @@
 }
 
 .list__item--hidden {
-    height: 0px;
-    visibility: hidden;
+    display: none;
 }
 
 .list__taskText {
